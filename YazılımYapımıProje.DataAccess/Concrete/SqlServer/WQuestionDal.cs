@@ -39,6 +39,7 @@ namespace YazılımYapımıProje.DataAccess.Concrete.SqlServer
                     WQuestionTopicId=Convert.ToInt32(reader["QuestionTopicId"]),
                     WQuestionTopicName=reader["QuestionTopicName"].ToString(),
                     WQuestionCorrectAnswer=reader["WQuestionCorrectAnswer"].ToString(),
+                    WQuestionPicture=reader["WQuestionPicture"].ToString(),
 
                 };
                 wquestion.Add(wquestions);
@@ -52,7 +53,7 @@ namespace YazılımYapımıProje.DataAccess.Concrete.SqlServer
         {
             ConnectionControl();
             SqlCommand command = new SqlCommand(
-                "Insert into WaitingQuestion values(@WQuestionText,@WQuestionAnswerA,@WQuestionAnswerB,@WQuestionAnswerC,@WQuestionAnswerD,@QuestionTopicId,@WQuestionCorrectAnswer)", cconnection);
+                "Insert into WaitingQuestion values(@WQuestionText,@WQuestionAnswerA,@WQuestionAnswerB,@WQuestionAnswerC,@WQuestionAnswerD,@QuestionTopicId,@WQuestionCorrectAnswer,@WQuestionPicture)", cconnection);
 
             command.Parameters.AddWithValue("@WQuestionText", wquestions.WQuestionText);
             command.Parameters.AddWithValue("@WQuestionAnswerA", wquestions.WQuestionAnswerA);
@@ -61,6 +62,7 @@ namespace YazılımYapımıProje.DataAccess.Concrete.SqlServer
             command.Parameters.AddWithValue("@WQuestionAnswerD", wquestions.WQuestionAnswerD);
             command.Parameters.AddWithValue("@WQuestionCorrectAnswer", wquestions.WQuestionCorrectAnswer);
             command.Parameters.AddWithValue("@QuestionTopicId", wquestions.WQuestionTopicId);
+            command.Parameters.AddWithValue("@WQuestionPicture", wquestions.WQuestionPicture);
             command.ExecuteNonQuery();
             cconnection.Close();
         }

@@ -16,11 +16,12 @@ namespace YazılımYapımıWfaUI.Forms
 {
     public partial class StartExamForm : Form
     {
-       
-        public StartExamForm()
+        private int QuestionNumber;
+        public StartExamForm(int NumberOfQuestion)
         {
             InitializeComponent();
             _questionService = new QuestionManager(new QuestionDal());
+            QuestionNumber = NumberOfQuestion;
         }
 
         private IQuestionService _questionService;
@@ -143,7 +144,7 @@ namespace YazılımYapımıWfaUI.Forms
             RdbClear();
             RandomQuestion();
             _counter++;
-            if (_counter == 10)
+            if (_counter == QuestionNumber)
             {
                 WaitFormResult wait_Form = new WaitFormResult(List);
                 wait_Form.ShowDialog();

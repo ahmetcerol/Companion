@@ -51,7 +51,7 @@ namespace YazılımYapımıProje.DataAccess.Concrete.SqlServer
         public void Add(Questions questions)
         {
             ConnectionControl();
-            SqlCommand command = new SqlCommand("Insert into Questions values(@QuestionText,@QuestionAnswerA,@QuestionAnswerC,@QuestionAnswerD,@QuestionCorrectAnswer,@QuestionTopicId,@QuestionAnswerB)", bconnection);
+            SqlCommand command = new SqlCommand("Insert into Questions values(@QuestionText,@QuestionAnswerA,@QuestionAnswerC,@QuestionAnswerD,@QuestionCorrectAnswer,@QuestionTopicId,@QuestionAnswerB,@QuestionPicture)", bconnection);
             command.Parameters.AddWithValue("@QuestionText",questions.QuestionText);
             command.Parameters.AddWithValue("@QuestionAnswerA",questions.QuestionAnswerA );
             command.Parameters.AddWithValue("@QuestionAnswerC",questions.QuestionAnswerC);
@@ -59,6 +59,7 @@ namespace YazılımYapımıProje.DataAccess.Concrete.SqlServer
             command.Parameters.AddWithValue("@QuestionCorrectAnswer",questions.QuestionCorrectAnswer);
             command.Parameters.AddWithValue("@QuestionTopicId",questions.QuestionTopicId);
             command.Parameters.AddWithValue("@QuestionAnswerB", questions.QuestionAnswerB);
+            command.Parameters.AddWithValue("@QuestionPicture", questions.QuestionPicture);
             command.ExecuteNonQuery();
             bconnection.Close();
         }

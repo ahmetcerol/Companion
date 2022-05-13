@@ -15,6 +15,7 @@ namespace YazılımYapımıWfaUI.Forms
 {
     public partial class TeacherP_QuestionForm : Form
     {
+        private string PictureFileName;
         public TeacherP_QuestionForm()
         {
             InitializeComponent();
@@ -39,6 +40,7 @@ namespace YazılımYapımıWfaUI.Forms
                 string DosyaAdi = file.SafeFileName;
             }
             pbxSelectFile.Image = Image.FromFile(file.FileName);
+            PictureFileName = file.FileName;
           
         }
 
@@ -97,6 +99,7 @@ namespace YazılımYapımıWfaUI.Forms
                 WQuestionAnswerD = (tbxTeacherD.Text).ToString(),
                 WQuestionTopicId = Convert.ToInt32(cbxTopic.SelectedValue),
                 WQuestionCorrectAnswer = CorrectAnswer,
+                WQuestionPicture=PictureFileName,
 
             }) ;
             MessageBox.Show("Thanks. Your question will be added to the question pool after review.");

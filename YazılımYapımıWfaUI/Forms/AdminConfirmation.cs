@@ -51,6 +51,7 @@ namespace YazılımYapımıWfaUI.Forms
                 QuestionAnswerD = (dgwConfirmation.CurrentRow.Cells[5].Value).ToString(),
                 QuestionTopicId = Convert.ToInt32(dgwConfirmation.CurrentRow.Cells[7].Value),
                 QuestionCorrectAnswer=(dgwConfirmation.CurrentRow.Cells[8].Value).ToString(),
+                QuestionPicture=(dgwConfirmation.CurrentRow.Cells[9].Value).ToString(),
 
             });
             MessageBox.Show("Question Approved");

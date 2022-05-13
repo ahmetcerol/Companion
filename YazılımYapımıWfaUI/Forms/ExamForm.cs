@@ -38,9 +38,23 @@ namespace YazılımYapımıWfaUI.Forms
         }
         private void btnStartExam_Click(object sender, EventArgs e)
         {
-            Wait_Form wait_Form = new Wait_Form(List);
-            wait_Form.ShowDialog();
-            OpenChildForm(new Forms.StartExamForm(), sender);
+            if (Convert.ToInt32(tbxNumber.Text) < 10)
+            {
+                MessageBox.Show("The number of questions can be at least 10.");
+            }
+            else
+            {
+                Wait_Form wait_Form = new Wait_Form(List);
+                wait_Form.ShowDialog();
+                OpenChildForm(new Forms.StartExamForm(Convert.ToInt32(tbxNumber.Text)), sender);
+            }
+           
         }
+
+       
+             
+           
+          
+        
     }
 }

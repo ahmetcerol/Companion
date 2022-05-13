@@ -15,5 +15,6 @@ namespace YazılımYapımıProje.Entities.Concrete
         public string WQuestionTopicName { get; set; }
         public int WQuestionTopicId { get; set; }
         public string WQuestionCorrectAnswer { get; set; }
+        public string WQuestionPicture { get; set; }
     }
 }
