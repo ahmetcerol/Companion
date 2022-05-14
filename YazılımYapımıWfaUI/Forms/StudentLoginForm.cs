@@ -61,7 +61,7 @@ namespace YazılımYapımıWfaUI.Forms
             childForm.Show();
 
         }
-
+        private int UserId;
         private void Logging()
         {
             try
@@ -77,10 +77,15 @@ namespace YazılımYapımıWfaUI.Forms
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(komut);
                 da.Fill(dt);
+                SqlDataReader reader = komut.ExecuteReader();
+                while (reader.Read())
+                {
+                    UserId = Convert.ToInt32(reader["UserId"]);
+                }
 
                 if (dt.Rows.Count > 0)
                 {
-                    StudentPage studentPage = new StudentPage();
+                    StudentPage studentPage = new StudentPage(UserId);
                     studentPage.ShowDialog();
                     this.Hide();
                     baglanti.Close();

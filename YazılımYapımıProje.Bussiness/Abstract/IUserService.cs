@@ -13,6 +13,8 @@ namespace YazılımYapımıProje.Bussiness.Abstract
 
         void Add(Users users);
         void SendEmail(string UserEMail);
+        void Update(Users users);
+       List<Users> GetUserInformation(int UserId);
  
        
     }

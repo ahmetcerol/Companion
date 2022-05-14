@@ -11,6 +11,7 @@ namespace YazılımYapımıProje.DataAccess.Abstract
         List<Users> TeacherGetAll();
         void Delete(int UserId);
         void SendEmail(string UserEMail);
+        List<Users> GetUserInformation(int UserId);
         
     }
 }

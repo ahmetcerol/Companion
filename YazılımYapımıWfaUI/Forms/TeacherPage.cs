@@ -12,8 +12,10 @@ namespace YazılımYapımıWfaUI
     {
 
         private Form activateForm;
-        public TeacherPage()
+        private int UserInformationId;
+        public TeacherPage(int UserId)
         {
+            UserInformationId = UserId;
             InitializeComponent();
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -76,7 +78,7 @@ namespace YazılımYapımıWfaUI
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new Forms.UserSettings(), sender);
+            OpenChildForm(new Forms.UserSettings(UserInformationId), sender);
         }
     }
 }

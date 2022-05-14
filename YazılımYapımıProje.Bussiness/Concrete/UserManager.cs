@@ -48,5 +48,13 @@ namespace YazılımYapımıProje.Bussiness.Concrete
         {               
             return _userDal.TeacherGetAll();
         }
+        public void Update(Users users)
+        {
+            _userDal.Update(users);
+        }
+        public List<Users> GetUserInformation(int UserId)
+        {
+            return _userDal.GetUserInformation(UserId);
+        }
     }
 }

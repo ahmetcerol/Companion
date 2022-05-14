@@ -49,7 +49,8 @@ namespace YazılımYapımıWfaUI.Forms
             }
         }
         SqlConnection baglanti = new SqlConnection(@"server=(localdb)\MSSQLLocalDB;initial catalog=CompanionData;integrated security=true");
-        
+
+        private int UserId;
         private void btnTeacherLogin_Click(object sender, EventArgs e)
         {
             try
@@ -64,10 +65,15 @@ namespace YazılımYapımıWfaUI.Forms
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(komut);
                 da.Fill(dt);
+                SqlDataReader reader = komut.ExecuteReader();
+                while (reader.Read())
+                {
+                    UserId = Convert.ToInt32(reader["UserId"]);
+                }
 
                 if (dt.Rows.Count > 0)
                 {
-                    TeacherPage teacherPage = new TeacherPage();
+                    TeacherPage teacherPage = new TeacherPage(UserId);
                     teacherPage.ShowDialog();
                     this.Close();
                     baglanti.Close();

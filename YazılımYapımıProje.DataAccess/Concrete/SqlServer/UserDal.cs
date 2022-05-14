@@ -107,6 +107,36 @@ namespace YazılımYapımıProje.DataAccess.Concrete
 
             return user;
         }
+
+        public List<Users> GetUserInformation(int UserId)
+        {
+
+            ConnectionControl();
+            SqlCommand command = new SqlCommand("Select UserId,UserName,UserSurname,UserEMail,UserPassword from UserTable Where UserId=@UserId", aconnection);
+            command.Parameters.AddWithValue("@UserId", UserId);
+            SqlDataReader reader = command.ExecuteReader();
+            List<Users> user = new List<Users>();
+            while (reader.Read())
+            {
+                Users users = new Users()
+                {
+                    UserId = Convert.ToInt32(reader["UserId"]),
+                    UserEMail = reader["UserEMail"].ToString(),
+                    UserName = reader["UserName"].ToString(),
+                    UserSurname = reader["UserSurname"].ToString(),
+                    UserPassword = Convert.ToInt32(reader["UserPassword"]),
+                    
+
+                };
+                user.Add(users);
+
+            }
+            reader.Close();
+            aconnection.Close();
+
+            return user;
+        }
+
         public void Add(Users users)
         {
             ConnectionControl();
@@ -122,7 +152,18 @@ namespace YazılımYapımıProje.DataAccess.Concrete
         }
         public void Update(Users users)
         {
-            //Settings yetişirse yazılacak
+            ConnectionControl();
+            SqlCommand command = new SqlCommand(
+                "Update UserTable Set UserName=@UserName, UserSurname=@UserSurname,UserEMail=@UserEMail,UserPassword=@UserPassword Where UserId=@UserId", aconnection);
+
+            command.Parameters.AddWithValue("@UserName", users.UserName);
+            command.Parameters.AddWithValue("@UserSurname", users.UserSurname);
+            command.Parameters.AddWithValue("@UserEMail", users.UserEMail);
+            command.Parameters.AddWithValue("@UserPassword", users.UserPassword);
+            command.Parameters.AddWithValue("@UserId", users.UserId);
+            command.ExecuteNonQuery();
+            aconnection.Close();
+            
         }
         public void Delete(int UserId)
         {
@@ -165,6 +206,7 @@ namespace YazılımYapımıProje.DataAccess.Concrete
             reader.Close();
             aconnection.Close();
         }
+        
 
         public List<Users> GetAll() { 
             throw new NotImplementedException();

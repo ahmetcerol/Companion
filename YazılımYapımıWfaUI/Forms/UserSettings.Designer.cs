@@ -42,8 +42,10 @@ namespace YazılımYapımıWfaUI.Forms
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblPersonalInformation = new System.Windows.Forms.Label();
             this.pbxSettings = new System.Windows.Forms.PictureBox();
+            this.dgwUserInformation = new System.Windows.Forms.DataGridView();
             this.gbxSettings.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwUserInformation)).BeginInit();
             this.SuspendLayout();
             // 
             // gbxSettings
@@ -60,6 +62,7 @@ namespace YazılımYapımıWfaUI.Forms
             this.gbxSettings.Controls.Add(this.lblUserName);
             this.gbxSettings.Controls.Add(this.lblPersonalInformation);
             this.gbxSettings.Controls.Add(this.pbxSettings);
+            this.gbxSettings.Controls.Add(this.dgwUserInformation);
             this.gbxSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxSettings.Location = new System.Drawing.Point(0, 0);
             this.gbxSettings.Name = "gbxSettings";
@@ -82,6 +85,7 @@ namespace YazılımYapımıWfaUI.Forms
             this.btnUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // tbxUserPassword
             // 
@@ -176,6 +180,16 @@ namespace YazılımYapımıWfaUI.Forms
             this.pbxSettings.TabIndex = 0;
             this.pbxSettings.TabStop = false;
             // 
+            // dgwUserInformation
+            // 
+            this.dgwUserInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgwUserInformation.Location = new System.Drawing.Point(487, 320);
+            this.dgwUserInformation.Name = "dgwUserInformation";
+            this.dgwUserInformation.RowTemplate.Height = 25;
+            this.dgwUserInformation.Size = new System.Drawing.Size(90, 21);
+            this.dgwUserInformation.TabIndex = 16;
+            this.dgwUserInformation.Visible = false;
+            // 
             // UserSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -184,9 +198,11 @@ namespace YazılımYapımıWfaUI.Forms
             this.Controls.Add(this.gbxSettings);
             this.Name = "UserSettings";
             this.Text = "UserSettings";
+            this.Load += new System.EventHandler(this.UserSettings_Load);
             this.gbxSettings.ResumeLayout(false);
             this.gbxSettings.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgwUserInformation)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -205,5 +221,6 @@ namespace YazılımYapımıWfaUI.Forms
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblPersonalInformation;
         private System.Windows.Forms.PictureBox pbxSettings;
+        private System.Windows.Forms.DataGridView dgwUserInformation;
     }
 }

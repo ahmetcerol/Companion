@@ -50,11 +50,6 @@ namespace YazılımYapımıWfaUI.Forms
             }
            
         }
-
-       
-             
-           
-          
         
     }
 }
