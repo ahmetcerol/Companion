@@ -4,7 +4,7 @@
 ![Image of Companion](https://github.com/ahmetcerol/Companion/blob/master/logoa_320x320.jpg)
 
 
-*Bu uygulamayı geliştirirken C#, paket olarak da Entity Framework ve ValidationRules
+*Bu uygulamayı geliştirirken C#, paket olarak da Entity Framework ve FluentValidation
 kullandık. C# tercih etmemizdeki temel neden Windows Form'un getirmiş olduğu kolaylıklardan 
 yararlanmak.*
 
