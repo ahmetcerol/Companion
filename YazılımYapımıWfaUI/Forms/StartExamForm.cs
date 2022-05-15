@@ -20,8 +20,10 @@ namespace YazılımYapımıWfaUI.Forms
         public StartExamForm(int NumberOfQuestion)
         {
             InitializeComponent();
+            
             _questionService = new QuestionManager(new QuestionDal());
             QuestionNumber = NumberOfQuestion;
+            
         }
 
         private IQuestionService _questionService;
@@ -47,6 +49,7 @@ namespace YazılımYapımıWfaUI.Forms
         private void StartExamForm_Load(object sender, EventArgs e)
         {
             RandomQuestion();
+            lblQuestionNumber.Text = "1";
             tmrStartExam.Start();
             minutes = 15;
             
@@ -139,17 +142,25 @@ namespace YazılımYapımıWfaUI.Forms
         public int _WrongCounter = 0;
         private void btnNextQuestion_Click(object sender, EventArgs e)
         {
-
-            AnswerControl();
-            RdbClear();
-            RandomQuestion();
-            _counter++;
             if (_counter == QuestionNumber)
             {
+                AnswerControl();
                 WaitFormResult wait_Form = new WaitFormResult(List);
                 wait_Form.ShowDialog();
-                OpenChildForm(new Forms.ExamResult(_TrueCounter,_WrongCounter), sender);
+                OpenChildForm(new Forms.ExamResult(_TrueCounter, _WrongCounter), sender);
             }
+
+            else
+            {
+                AnswerControl();
+                RdbClear();
+                _counter++;
+                RandomQuestion();
+                lblQuestionNumber.Text = _counter.ToString();
+            }
+           
+            
+           
         }
 
         private void RdbClear()

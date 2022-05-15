@@ -38,7 +38,11 @@ namespace YazılımYapımıWfaUI.Forms
         }
         private void btnStartExam_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(tbxNumber.Text) < 10)
+            if (tbxNumber.Text==String.Empty)
+            {
+                tbxNumber.Text = "10";
+            }
+           else if (Convert.ToInt32(tbxNumber.Text) < 10 )
             {
                 MessageBox.Show("The number of questions can be at least 10.");
             }

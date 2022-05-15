@@ -32,6 +32,8 @@ namespace YazılımYapımıWfaUI.Forms
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartExamForm));
             this.pnlStartExam = new System.Windows.Forms.Panel();
+            this.lblAboutQuestionNumber = new System.Windows.Forms.Label();
+            this.lblQuestionNumber = new System.Windows.Forms.Label();
             this.lblAboutTimer = new System.Windows.Forms.Label();
             this.lblTimer = new System.Windows.Forms.Label();
             this.gbxTeacherAnswer = new System.Windows.Forms.GroupBox();
@@ -60,6 +62,8 @@ namespace YazılımYapımıWfaUI.Forms
             // 
             this.pnlStartExam.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pnlStartExam.BackColor = System.Drawing.Color.White;
+            this.pnlStartExam.Controls.Add(this.lblQuestionNumber);
+            this.pnlStartExam.Controls.Add(this.lblAboutQuestionNumber);
             this.pnlStartExam.Controls.Add(this.lblAboutTimer);
             this.pnlStartExam.Controls.Add(this.lblTimer);
             this.pnlStartExam.Controls.Add(this.gbxTeacherAnswer);
@@ -72,6 +76,26 @@ namespace YazılımYapımıWfaUI.Forms
             this.pnlStartExam.Name = "pnlStartExam";
             this.pnlStartExam.Size = new System.Drawing.Size(704, 444);
             this.pnlStartExam.TabIndex = 1;
+            // 
+            // lblAboutQuestionNumber
+            // 
+            this.lblAboutQuestionNumber.AutoSize = true;
+            this.lblAboutQuestionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblAboutQuestionNumber.Location = new System.Drawing.Point(101, 32);
+            this.lblAboutQuestionNumber.Name = "lblAboutQuestionNumber";
+            this.lblAboutQuestionNumber.Size = new System.Drawing.Size(123, 15);
+            this.lblAboutQuestionNumber.TabIndex = 19;
+            this.lblAboutQuestionNumber.Text = "Question Number:";
+            // 
+            // lblQuestionNumber
+            // 
+            this.lblQuestionNumber.AutoSize = true;
+            this.lblQuestionNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblQuestionNumber.Location = new System.Drawing.Point(220, 32);
+            this.lblQuestionNumber.Name = "lblQuestionNumber";
+            this.lblQuestionNumber.Size = new System.Drawing.Size(15, 15);
+            this.lblQuestionNumber.TabIndex = 2;
+            this.lblQuestionNumber.Text = "0";
             // 
             // lblAboutTimer
             // 
@@ -296,5 +320,7 @@ namespace YazılımYapımıWfaUI.Forms
         private System.Windows.Forms.Label lblTimer;
         private System.Windows.Forms.Timer tmrStartExam;
         private System.Windows.Forms.DataGridView dgwQuestions;
+        private System.Windows.Forms.Label lblAboutQuestionNumber;
+        private System.Windows.Forms.Label lblQuestionNumber;
     }
 }
