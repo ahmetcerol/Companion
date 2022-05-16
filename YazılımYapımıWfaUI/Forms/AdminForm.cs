@@ -32,8 +32,10 @@ namespace YazılımYapımıWfaUI.Forms
             }
         }
 
+
+        /*Checks the password and email used when logging in*/
         SqlConnection ebaglanti = new SqlConnection(@"server=(localdb)\MSSQLLocalDB;initial catalog=CompanionData;integrated security=true");
-        private bool ahmet;
+        private bool UserControl;
         private void btnLogin_Click(object sender, EventArgs e)
         {
     
@@ -53,7 +55,7 @@ namespace YazılımYapımıWfaUI.Forms
 
                 if (dt.Rows.Count > 0)
                 {
-                    ahmet = true;
+                    UserControl = true;
                     this.Close();
                     ebaglanti.Close();
 
@@ -65,7 +67,7 @@ namespace YazılımYapımıWfaUI.Forms
                 ebaglanti.Close();
             }
 
-            if (ahmet == true)
+            if (UserControl == true)
             {
                 AdminPage adminPage = new AdminPage();
                 adminPage.ShowDialog();

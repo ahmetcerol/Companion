@@ -119,9 +119,8 @@ namespace YazılımYapımıWfaUI.Forms
             this.lblExam.Name = "lblExam";
             this.lblExam.Size = new System.Drawing.Size(424, 72);
             this.lblExam.TabIndex = 1;
-            this.lblExam.Text = "You have 1 and a half minute for each question.\r\nIf you think you don\'t understan" +
-    "d a subject, don\'t worry,\r\nyou will continue to solve it until you do.\r\nThanks t" +
-    "o 6 sigma";
+            this.lblExam.Text = "You have 1 minute for each question.\r\nIf you think you don\'t understand a subject" +
+    ", don\'t worry,\r\nyou will continue to solve it until you do.\r\nThanks to 6 sigma";
             this.lblExam.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblExam.UseMnemonic = false;
             // 

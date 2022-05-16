@@ -31,6 +31,8 @@ namespace YazılımYapımıWfaUI
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
+        // This code will help,drag and drop operations in the form application.
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -38,8 +40,10 @@ namespace YazılımYapımıWfaUI
 
         //Methods
 
+        
         private Color SelectThemeColor()
         {
+            /*It makes different colors appear when the button is clicked.Colors are in the ThemeColor class in html format.*/
             int index = random.Next(ThemeColor.ColorList.Count);
             while (tempIndex == index)
             {
@@ -84,6 +88,8 @@ namespace YazılımYapımıWfaUI
         }
         private void OpenChildForm(Form childForm, object btnSender)
         {
+            /*With this code, we can send different Form Pages to the side panel(pnlMainContent).*/
+            
             if (activateForm != null)
             {
                 activateForm.Close();
@@ -111,6 +117,7 @@ namespace YazılımYapımıWfaUI
         }
         private void Reset()
         {
+            //Returning to the start page
             DisableButton();
             lblTitle.Text = "WE ARE COMPANION FOR YOUR EXAMS,WHAT ARE WE WAITING FOR LET'S GET STARTED";
             pnlLogo.BackColor = Color.FromArgb(0, 59, 111);

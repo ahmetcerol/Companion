@@ -28,7 +28,7 @@ namespace YazılımYapımıWfaUI.Forms
 
         private IQuestionService _questionService;
         private int seconds = 60;
-        private int minutes = 0;
+        private int minutes;
         private Form activateForm;
         private void OpenChildForm(Form childForm, object btnSender)
         {
@@ -51,8 +51,8 @@ namespace YazılımYapımıWfaUI.Forms
             RandomQuestion();
             lblQuestionNumber.Text = "1";
             tmrStartExam.Start();
-            minutes = 15;
-            
+            minutes = QuestionNumber * 1 ;
+
 
         }
         private void RandomQuestion()
@@ -122,6 +122,7 @@ namespace YazılımYapımıWfaUI.Forms
         }
         private void ExamTimer()
         {
+            /*This function sets the exam duration.*/
             tmrStartExam.Interval = 1000;/*1000 = 1 seconds in c#*/
             seconds = seconds - 1;
             lblTimer.Text = minutes.ToString();

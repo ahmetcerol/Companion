@@ -34,10 +34,13 @@ namespace YazılımYapımıWfaUI.Forms
         }
         void List()
         {
+            //Sets the standby screen to 3 seconds
             Thread.Sleep(3000);
         }
         private void btnStartExam_Click(object sender, EventArgs e)
         {
+
+            /*It checks how many questions the student wants in an exam. It must be at least 10.*/
             if (tbxNumber.Text==String.Empty)
             {
                 tbxNumber.Text = "10";

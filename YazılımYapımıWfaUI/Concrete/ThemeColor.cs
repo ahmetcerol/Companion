@@ -10,6 +10,7 @@ namespace YazılımYapımıWfaUI.Concrete
         public static Color PrimaryColor { get; set; }
         public static Color SecondaryColor { get; set; }
 
+        //COLOR CODES İN HTML FORMAT
         public static List<string> ColorList = new List<string>() { "#2f4f4f",
                                                                     "#8b4513",
                                                                     "#483d8b",
@@ -32,7 +33,7 @@ namespace YazılımYapımıWfaUI.Concrete
             double red = color.R;
             double green = color.G;
             double blue = color.B;
-            //Değer 0'dan küçükse rengi soluklaştırır.
+            //Fades the color if the value is less than 0.
             if (correctionFactor < 0)
             {
                 correctionFactor = 1 + correctionFactor;
@@ -40,7 +41,7 @@ namespace YazılımYapımıWfaUI.Concrete
                 green *= correctionFactor;
                 blue *= correctionFactor;
             }
-            //Değer 0'dan büyükse rengi parlaklaştırır.
+            //Brightens the color if the value is greater than 0.
             else
             {
                 red = (255 - red) * correctionFactor + red;
