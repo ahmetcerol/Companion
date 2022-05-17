@@ -6,7 +6,7 @@
 
 *Bu uygulamayı geliştirirken C#, paket olarak da Entity Framework ve FluentValidation
 kullandık. C# tercih etmemizdeki temel neden Windows Form'un getirmiş olduğu kolaylıklardan 
-yararlanmak.*
+yararlanmak.Proje geliştirme aşamasında Çok Katmanlı Mimari kullandık.Çok Katmanlı Mimari sayesinde kullanıcı ve kod arasındaki bağlılık sıfıra indirilmiş oldu.*
 
 *Uygulamanın içeriğine gelirsek Admin,Öğrenci ve Öğretmen giriş sayfalarımız bulunmakta.
 Eğer ki kişi uygulamayı ilk defa açmış ise Kayıt Ol sayfamızda Öğretmen veya Öğrenci
@@ -42,7 +42,7 @@ olarak giriş yapabilmekte.Kişi Admin ise Adminimizin yetkileri;*
  
  *While developing this application, C#, Entity Framework and FluentValidation as a package
 we used.The main reason why we prefer C# is the convenience of Windows Form.
-benefit.*
+benefit.We used Multi-Tier Architecture during the project development phase. Thanks to Multi-Tier Architecture, the dependency between the user and the code was reduced to zero.*
 
 *As for the content of the application, we have Admin, Student and Teacher login pages.
 If the person has opened the application for the first time, on our Register page, Teacher or Student
