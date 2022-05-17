@@ -105,6 +105,7 @@ namespace YazılımYapımıWfaUI.Forms
             if (TrueAnswer == Answer)
             {
                 _TrueCounter++;
+
             }
             else
             {

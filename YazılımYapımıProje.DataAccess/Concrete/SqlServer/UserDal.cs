@@ -186,7 +186,7 @@ namespace YazılımYapımıProje.DataAccess.Concrete
                     SmtpClient smtpServer = new SmtpClient();
                     MailMessage mail = new MailMessage();
                     String Date = DateTime.Now.ToLongDateString();
-                    String OurMail =("companion687@gmail.com");
+                    String OurMail =("erola202803033@gmail.com");
                     String Password = "202803033";
                     String smptserver = "smtp.gmail.com";
                     String EmailAdress = (reader["UserEMail"].ToString());
